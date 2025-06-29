@@ -67,7 +67,7 @@ export async function getFlightPrice(): Promise<FlightPriceResult> {
   console.log(`[Scraper] Rango vuelta: ${returnRange[0]} a ${returnRange[returnRange.length-1]}`);
   
   const browser = await chromium.launch({ 
-    headless: false,
+    headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
   
