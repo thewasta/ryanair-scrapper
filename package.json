@@ -3,7 +3,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "pnpm dlx tsx watch --env-file .env src/index.ts",
-		"start": "NODE_ENV=production pnpm dlx tsx --env-file .env --env-file .env.production src/index.ts",
+		"start": "pnpm dlx tsx --env-file .env --env-file .env.production src/index.ts",
 		"lint": "pnpm dlx @biomejs/biome check",
 		"lint:fix": "pnpm run lint --fix"
 	},
