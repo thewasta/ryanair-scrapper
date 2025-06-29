@@ -1,0 +1,18 @@
+services:
+    postgres:
+            container_name: scrapping-vuelos-polonia-postgres
+            image: postgres:latest
+            restart: unless-stopped
+            environment:
+                - POSTGRES_USER=scrapping-vuelos-polonia
+                - POSTGRES_PASSWORD=25e8d98f4b1fa472db9d5704
+                - POSTGRES_DB=scrapping-vuelos-polonia
+            ports:
+                - 5432:5432
+            volumes:
+                - postgres_data:/var/lib/postgresql/data
+volumes:
+    postgres_data:
+    
+networks:
+    default: {}

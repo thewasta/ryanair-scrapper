@@ -1,0 +1,24 @@
+services:
+    bot:
+    			container_name: scrapping-vuelos-polonia-bot
+    			restart: unless-stopped
+    			build:
+    				context: .
+    				dockerfile: Dockerfile
+    			environment:
+    			- NODE_ENV=production
+        postgres:
+    			container_name: scrapping-vuelos-polonia-postgres
+    			image: postgres:latest
+    			restart: unless-stopped
+    			environment:
+    				- POSTGRES_USER=scrapping-vuelos-polonia
+    				- POSTGRES_PASSWORD=25e8d98f4b1fa472db9d5704
+    				- POSTGRES_DB=scrapping-vuelos-polonia
+    			volumes:
+    				- postgres_data:/var/lib/postgresql/data
+volumes:
+    postgres_data:
+    
+networks:
+    default: {}
