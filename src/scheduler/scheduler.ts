@@ -21,8 +21,8 @@ const RUTAS = {
  * Orquestador diario actualizado para manejar vuelos de ida y vuelta
  */
 export function startDailyScheduler() {
-  // Ejecutar todos los días a las 22:05
-  cron.schedule("25 23 * * *", async () => {
+  // Ejecutar todos los días a las 8:00 y 16:00
+  cron.schedule("0 8,16 * * *", async () => {
     console.log("[Scheduler] Iniciando tarea diaria de monitoreo ida y vuelta...");
     
     try {
@@ -296,7 +296,7 @@ export function startDailyScheduler() {
     }
   });
 
-  console.log("[Scheduler] ✅ Tarea diaria programada para las 22:05 (ida y vuelta)");
+  console.log("[Scheduler] ✅ Tarea diaria programada para las 8:00 y 16:00 (ida y vuelta)");
 }
 
 /**
