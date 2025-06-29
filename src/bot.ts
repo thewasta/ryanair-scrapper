@@ -8,6 +8,6 @@ export const bot = new Bot(config.BOT_TOKEN)
 		const chatId = context.chat.id;
 		const chatTitle = context.chat.title ?? null;
 		insertarUsuario({ chat_id: chatId, chat_title: chatTitle });
-		context.send(`Hola!`);
+		context.send(`Hola! Si lees esto Cristina me tiene explotado (AYUDA POR FAVOR)`);
 	})
 	.onStart(({ info }) => console.log(`✨ Bot ${info.username} ${info.id} was started!`));
