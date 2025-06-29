@@ -1,5 +1,6 @@
 import { bot } from "./bot.ts";
 import { config } from "./config.ts";
+import { startDailyScheduler } from "./scheduler/scheduler.js";
 
 const signals = ["SIGINT", "SIGTERM"];
 
@@ -18,5 +19,6 @@ process.on("uncaughtException", (error) => {
 process.on("unhandledRejection", (error) => {
 	console.error(error);
 });
+startDailyScheduler();
 
 await bot.start();

@@ -8,13 +8,17 @@
 		"lint:fix": "pnpm run lint --fix"
 	},
 	"dependencies": {
-		"gramio": "^0.4.7",
+		"@types/better-sqlite3": "^7.6.13",
+		"@verrou/core": "^0.5.1",
+		"better-sqlite3": "^12.2.0",
 		"env-var": "^7.5.0",
-		"@verrou/core": "^0.5.1"
+		"gramio": "^0.4.7",
+		"node-cron": "^4.1.1",
+		"playwright": "^1.53.1"
 	},
 	"devDependencies": {
-		"typescript": "^5.8.3",
+		"@biomejs/biome": "^1.9.4",
 		"@types/node": "^22.15.29",
-		"@biomejs/biome": "^1.9.4"
+		"typescript": "^5.8.3"
 	}
 }
