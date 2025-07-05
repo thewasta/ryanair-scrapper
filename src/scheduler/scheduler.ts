@@ -22,7 +22,7 @@ const RUTAS = {
  */
 export function startDailyScheduler() {
   // Ejecutar todos los días a las 8:00 y 16:00
-  cron.schedule("8 20 * * *", async () => {
+  cron.schedule("0 */6 * * *", async () => {
     console.log("[Scheduler] Iniciando tarea diaria de monitoreo ida y vuelta...");
     
     try {
