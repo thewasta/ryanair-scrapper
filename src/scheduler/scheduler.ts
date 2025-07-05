@@ -22,7 +22,7 @@ const RUTAS = {
  */
 export function startDailyScheduler() {
   // Ejecutar todos los días a las 8:00 y 16:00
-  cron.schedule("0 */6 * * *", async () => {
+  cron.schedule("8 20 * * *", async () => {
     console.log("[Scheduler] Iniciando tarea diaria de monitoreo ida y vuelta...");
     
     try {
@@ -200,7 +200,7 @@ export function startDailyScheduler() {
         const porcentajeCambio = (diferencia / totalAnterior) * 100;
 
         // Notificar si hay cambio significativo en el total (±5% o ±20€)
-        if (Math.abs(porcentajeCambio) >= 5 || Math.abs(diferencia) >= 20) {
+        if (Math.abs(porcentajeCambio) >= 0.1 || Math.abs(diferencia) >= 5) {
           const emoji = diferencia < 0 ? '📉' : '📈';
           const cambioTexto = diferencia < 0 ? 'BAJADA' : 'SUBIDA';
           const ahorroTexto = diferencia < 0 ? `Ahorro: €${Math.abs(diferencia).toFixed(2)}` : `Incremento: €${diferencia.toFixed(2)}`;
